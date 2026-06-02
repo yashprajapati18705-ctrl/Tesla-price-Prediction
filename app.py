@@ -14,7 +14,7 @@ st.set_page_config(page_title="Tesla Stock Predictor", layout="wide")
 # ======================
 # HEADER
 # ======================
-st.title("📈 Tesla Stock Price Prediction")
+st.title("Tesla Stock Price Prediction")
 st.markdown("Deep Learning Models: **SimpleRNN vs LSTM**")
 
 # ======================
@@ -23,7 +23,7 @@ st.markdown("Deep Learning Models: **SimpleRNN vs LSTM**")
 df = load_and_clean_data()
 
 # Sidebar controls
-st.sidebar.header("⚙️ Controls")
+st.sidebar.header("Controls")
 model_choice = st.sidebar.selectbox("Choose Model", ["LSTM", "SimpleRNN"])
 days = st.sidebar.selectbox("Prediction Days", [1, 5, 10])
 
@@ -33,11 +33,11 @@ days = st.sidebar.selectbox("Prediction Days", [1, 5, 10])
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("📊 Dataset Preview")
+    st.subheader("Dataset Preview")
     st.dataframe(df.tail())
 
 with col2:
-    st.subheader("📉 Stock Trend")
+    st.subheader("Stock Trend")
     fig = plt.figure()
     plt.plot(df['Adj Close'])
     plt.title("Adj Close Price")
@@ -72,7 +72,7 @@ def train_selected_model(model_name):
     return model
 
 # Train button
-if st.button("🚀 Train Model"):
+if st.button("Train Model"):
     model = train_selected_model(model_choice)
     st.success(f"{model_choice} Model Trained Successfully")
 
@@ -91,11 +91,11 @@ try:
     col3, col4 = st.columns(2)
 
     with col3:
-        st.subheader("📊 Model Performance")
+        st.subheader("Model Performance")
         st.metric("MSE", round(mse, 6))
 
     with col4:
-        st.subheader("📈 Prediction Graph")
+        st.subheader("Prediction Graph")
         fig2 = plt.figure()
         plt.plot(y_test, label="Actual")
         plt.plot(predictions, label="Predicted")
@@ -122,7 +122,7 @@ def predict_future(model, data, days):
 
     return output
 
-st.subheader("🔮 Future Prediction")
+st.subheader("Future Prediction")
 
 if st.button("Predict Future Prices"):
     try:
@@ -145,7 +145,7 @@ if st.button("Predict Future Prices"):
 # FOOTER INSIGHTS
 # ======================
 st.markdown("---")
-st.subheader("📌 Insights")
+st.subheader("Insights")
 
 st.write("""
 - LSTM generally performs better due to long-term memory capability.
