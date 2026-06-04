@@ -131,12 +131,6 @@ Through this project, I gained hands-on experience in:
 
 ---
 
-## 📸 Application Preview
-
-Add screenshots or GIFs of your Streamlit application here.
-
----
-
 ## 👨‍💻 Author
 
 **Yash Prajapati**
